@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('RegisterdForm', [UserController::class,'RegisterdForm'])->name('RegisterdForm');
+Route::post('userRegister',[UserController::class,'userRegister'])->name('userRegister');
+Route::get('login',[UserController::class,'login'])->name('login');
+Route::post('authenticate',[UserController::class,'authenticate'])->name('authenticate');
